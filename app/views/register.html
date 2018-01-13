@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-md-offset-2">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <span class="glyphicon glyphicon-user"></span> Register
+        </div>
+        <div class="panel-body">
+          <form class="form-horizontal" role="form" ng-submit="registerCtrl.register($event)">
+            <div class="form-group">
+              <label  class="col-sm-3 control-label">Name</label>
+              <div class="col-sm-9">
+                <input type="text" name="name" ng-model="registerCtrl.user.name" class="form-control"  placeholder="Name" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label  class="col-sm-3 control-label">Email Id</label>
+              <div class="col-sm-9">
+                <input type="email" name="email" class="form-control" ng-model="registerCtrl.user.email"  placeholder="Email Id" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="nopend" class="col-sm-3 control-label">Password</label>
+              <div class="col-sm-9">
+                <input type="password" name="password" class="form-control" ng-model="registerCtrl.user.password" id="nopend" placeholder="Minimum of 6 characters" required>
+              </div>
+            </div>
+            <div class="form-group last">
+              <div class="col-sm-offset-3 col-sm-9">
+                <button type="submit" class="btn btn-primary full-width">Register</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="panel-footer clearfix clearfix">
+          <span>Already Registered? <a ui-sref="LOGIN">Go to Login</a><span>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>

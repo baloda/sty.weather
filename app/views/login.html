@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-lock"></span> Login</div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" ng-submit="loginCtrl.login()">
+                    <div class="form-group">
+                        <label for="nokp" class="col-sm-3 control-label">
+                            Email Id</label>
+                        <div class="col-sm-9">
+                            <input ng-model="loginCtrl.user.email" name="email" type="text" class="form-control" id="nokp" placeholder="Email Id" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nopend" class="col-sm-3 control-label">
+                            Password</label>
+                        <div class="col-sm-9">
+                            <input ng-model="loginCtrl.user.password" name="password" type="password" class="form-control" id="nopend" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div class="form-group last">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <button type="submit" class="btn btn-primary full-width">
+                                Login</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+                <div class="panel-footer clearfix clearfix">
+                    <span>Not Registered? <a ui-sref="REGISTER">Register here</a><span>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
