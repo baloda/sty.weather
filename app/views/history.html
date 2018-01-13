@@ -1,0 +1,81 @@
+<div class="container p0">
+  <div class="row" style="margin-top:100px;">
+    <div class="col-sm-3">
+      <div class="profile-sidebar">
+        <!-- SIDEBAR USERPIC -->
+        <div class="profile-userpic">
+          <img ng-src="{{weatherCtrl.user.image}}" class="img-responsive" alt="">
+        </div>
+        <!-- END SIDEBAR USERPIC -->
+        <!-- SIDEBAR USER TITLE -->
+        <div class="profile-usertitle">
+          <div class="profile-usertitle-name">
+            {{weatherCtrl.user.name}}
+          </div>
+          <div class="profile-usertitle-job">
+            {{weatherCtrl.user.email}}
+          </div>
+        </div>
+        <div class="profile-usermenu">
+          <ul class="nav">
+            <li class="active">
+              <a ui-sref="HOME">
+                <i class="glyphicon glyphicon-home"></i> Home </a>
+            </li>
+            <li>
+              <a ui-sref="HISTORY">
+                <i class="glyphicon glyphicon-ok"></i> History </a>
+            </li>
+            <li>
+              <a role="button" ng-click="weatherCtrl.logout()">
+                <i class="glyphicon glyphicon-user"></i> Logout </a>
+            </li>
+          </ul>
+        </div>
+        <!-- END MENU -->
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <div class="col-sm-12" ng-init="weatherCtrl.getUserWeatherHistory()">
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <div class="col-sm-12">
+        <div class="input-group col-md-12" id="custom-search-input">
+          <h1 class="heading"><span style="color:aqua;">User History</span></h1>
+        </div>
+      </div>
+      <div class="col-sm-12" ng-if="weatherCtrl.histroy">
+        
+        <div class="col-sm-6" ng-repeat="row in weatherCtrl.histroy">
+          
+          
+           <div class="col">
+             
+            <div class="weather-card" ng-class="weatherCtrl.getClass(row.weather.today.main.temp)">
+              <div class="top">
+                <div class="wrapper">
+                  <div class="mynav">
+                    <a href="javascript:;"><span class="lnr lnr-chevron-left"></span></a>
+                    <a href="javascript:;"><span class="lnr lnr-cog"></span></a>
+                  </div>
+                  <h1 class="heading">{{row.city}}</h1>
+                  <h3 class="location">{{(row.weather.today.dt_txt)}}</h3>
+                  <h1 class="heading">{{row.weather.today.weather[0].main}}</h1>
+                  <!-- <h3 class="location">{{row.weather.searchquery.location}}</h3> -->
+                  <p class="temp">
+                    <span class="temp-value">{{row.weather.today.main.temp - 273.15 | number:2}}</span>
+                    <span class="deg">0</span>
+                    <a href="javascript:;"><span class="temp-type">C</span></a>
+                  </p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>

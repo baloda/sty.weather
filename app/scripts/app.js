@@ -56,7 +56,13 @@ angular
           controllerAs:'weatherCtrl',
 					params: null
 				})
-
+				.state('HISTORY', {
+					templateUrl: "views/history.html",
+					url: "/history",
+          controller:'Weather',
+          controllerAs:'weatherCtrl',
+					params: null
+				})
 		}
 	])
 	.run(['$rootScope', '$state', function ($rootScope, $state) {

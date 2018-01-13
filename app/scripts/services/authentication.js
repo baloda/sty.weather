@@ -36,7 +36,7 @@ angular.module('webWeatherApp').service("authenticationService", ['$rootScope', 
 
 		logout: function () {
 			return $http({
-				url: $rootScope.apiUrl + "user/logout/",
+				url: $rootScope.apiUrl + "users/logout/",
 				method: "POST",
 				headers: authenticationService.getHeaders()
 			});

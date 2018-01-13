@@ -10,6 +10,14 @@ angular.module('webWeatherApp').service("weatherService", ['$rootScope','authent
         headers: authenticationService.getHeaders()
       });
     },
+    getUserWeatherHistory: function(filter) {
+      return $http({
+        url: $rootScope.apiUrl + `city-weather/${filter.where.userId}`,
+        method: "GET",
+        params: filter,
+        headers: authenticationService.getHeaders()
+      });
+    }
 
 	};
 

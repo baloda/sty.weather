@@ -98,6 +98,20 @@ angular.module('webWeatherApp')
 			}
 		}
 
+		vm.getUserWeatherHistory = function () {
+			var filter = {
+				limit: 25,
+				skip: 0,
+				where: {
+					userId: authenticationService.getUserId()
+				}
+			}
+			weatherService.getUserWeatherHistory(filter).then(function (res) {
+				if (res) {
+					vm.histroy = res.data;
+				}
+			})
+		}
 	}])
 
 	.controller('Register', ['$scope', '$state', 'authenticationService', 'toastr', function ($scope, $state, authenticationService, toastr) {
