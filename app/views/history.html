@@ -59,7 +59,7 @@
                     <a href="javascript:;"><span class="lnr lnr-chevron-left"></span></a>
                     <a href="javascript:;"><span class="lnr lnr-cog"></span></a>
                   </div>
-                  <h1 class="heading">{{row.city}}</h1>
+                  <h1 class="heading">{{row.location | limitTo:26}}</h1>
                   <h3 class="location">{{(row.weather.today.dt_txt)}}</h3>
                   <h1 class="heading">{{row.weather.today.weather[0].main}}</h1>
                   <!-- <h3 class="location">{{row.weather.searchquery.location}}</h3> -->

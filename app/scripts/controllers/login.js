@@ -84,7 +84,8 @@ angular.module('webWeatherApp')
 				var temp = {
 					lat: vm.searchquery.latitude,
 					lon: vm.searchquery.longitude,
-					userId: authenticationService.getUserId()
+					userId: authenticationService.getUserId(),
+					location: vm.searchquery.location
 				}
 				console.log(vm.searchquery);
 				weatherService.getWeather(temp).then(function (res) {
